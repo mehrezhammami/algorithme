@@ -1,0 +1,29 @@
+ALGORITHM checkpoint
+VAR
+    ch: STRING;
+    i:INTEGER;
+    esp:INTEGER:=0;
+    nummot:INTEGER:=1;
+    numvow:INTEGER:=0;
+
+BEGIN
+    Write('saisi votre chaine');
+    Read(ch);
+    FOR i FROM 1 TO ch.length-1  DO
+        IF (ch[i]=" ") THEN
+            esp=esp+1;
+            nummot:=nummot+1;
+        END_IF
+
+        IF (ch[i]="a" or ch[i]="e" or ch[i]="i" or ch[i]="o" or ch[i]="u" or ch[i]="y"or
+        ch[i]="A" or ch[i]="E" or ch[i]="I" or ch[i]="O" or ch[i]="U" or ch[i]="Y") THEN
+            numvow=numvow+1;
+        END_IF
+
+    END_FOR
+
+    writeln('le nombre de mot dans la chaine est ',nummot);
+    writeln('le nombre de carractere est ',ch.length-esp);
+    writeln('le nombre d"espace dans cette chaine',esp);
+    writeln('le nombre de vowel est ',numvow);
+END
